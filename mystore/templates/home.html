@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Store</title>
+
+    <!-- ✅ Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ Google Font for clean sporty look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        /* 🔥 Hero section like Nike */
+        .hero {
+            background: linear-gradient(120deg, #111, #1a1a1a);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1600185365926-3b4b2d2d69c7?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+
+        a {
+            display: inline-block;
+            margin: 15px;
+            padding: 14px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        a[href*='products'] {
+            background-color: #fff;
+            color: #111;
+        }
+
+        a[href*='register'] {
+            background-color: #ff3c00;
+            color: #fff;
+        }
+
+        a[href*='login'] {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #111;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Hero section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>HOME</h1>
+            <a href="{% url 'products' %}">Product</a><br><br>
+            <a href="{% url 'register' %}">Register</a><br><br>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 MyStore. Just Do It. 🔥
+    </footer>
+
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
